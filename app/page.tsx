@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useMutation } from "@tanstack/react-query"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { client } from "./api/lib/client"
 import { nanoid } from "nanoid"
 
@@ -17,6 +17,11 @@ const generateUsername = () => {
 export default function Home() {
   const [username, setUsername] = useState("")
   const router = useRouter()
+  const searchParams = useSearchParams()
+
+  const errorMsg = searchParams.get("error") === "room-full"
+    ? "This room is already full (max 2 users)."
+    : null
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY)
@@ -29,7 +34,6 @@ export default function Home() {
       setTimeout(() => setUsername(newName), 0)
     }
   }, [])
-
 
   // create room mutation, mutation means action that changes data on server
   const { mutate } = useMutation({
@@ -52,6 +56,11 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <div className="w-full max-w-md space-y-8">
+        {errorMsg && (
+          <div className="bg-red-500/10 border border-red-500 text-red-500 p-4 text-sm text-center">
+            {errorMsg}
+          </div>
+        )}
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold tracking-tight text-green-500">
             {">"}private_chat
