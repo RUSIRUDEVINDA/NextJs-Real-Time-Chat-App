@@ -9,7 +9,7 @@ const rooms = new Elysia({ prefix: "/room" })
     const roomId = nanoid()
 
     await redis.hset(`meta:${roomId}`, {
-      connected: [],
+      connected: JSON.stringify([]),
       createdAt: Date.now(),
     })
 
