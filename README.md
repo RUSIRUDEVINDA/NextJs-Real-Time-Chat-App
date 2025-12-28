@@ -84,8 +84,8 @@ PORT=5000
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/RUSIRUDEVINDA/NextJs-Real-Time-Chat-App.git
-cd NextJs-Real-Time-Chat-App
+git clone https://github.com/RUSIRUDEVINDA/Real-Time-Chat-App.git
+Real-Time-Chat-App
 npm install
 cd server && npm install && cd ..
 ```
