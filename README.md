@@ -115,7 +115,7 @@ npm run dev
 ---
 
 ## 🔗 Project Links
-- **GitHub Repository**: [NextJs-Real-Time-Chat-App](https://github.com/RUSIRUDEVINDA/NextJs-Real-Time-Chat-App)
+- **GitHub Repository**: [Real-Time-Chat-App](https://github.com/RUSIRUDEVINDA/Real-Time-Chat-App)
 - **Documentation**: [Next.js Docs](https://nextjs.org/docs), [Socket.io Docs](https://socket.io/docs/v4/), [Upstash Redis Docs](https://docs.upstash.com/redis)
 
 ---
